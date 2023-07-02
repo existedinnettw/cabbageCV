@@ -1,7 +1,7 @@
 
 # install
 
-
+The compatibility of tensorflow is actually becomre worser. [A note about different operating system packages](https://github.com/tensorflow/text#a-note-about-different-operating-system-packages). Which means windows tensorflow is dying at the same time. 
 
 ## amd
 for amd gpu, I will say good luck for you.  
