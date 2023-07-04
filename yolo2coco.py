@@ -23,6 +23,7 @@ parser.add_argument('--save_path', type=str,default='./train.json', help="if not
 parser.add_argument('--random_split', action='store_true', help="random split the dataset, default ratio is 8:1:1")
 parser.add_argument('--split_ratio', type=str, default='0.7:0.1:0.2', help="split with specific ratio, default ratio is 8:1:1")
 parser.add_argument('--split_by_file', action='store_true', help="define how to split the dataset, include ./train.txt ./val.txt ./test.txt ")
+parser.add_argument('--start_zero', action='store_true', help="if coco category start from zero, default false(from 1)")
 
 arg = parser.parse_args()
 
@@ -64,6 +65,10 @@ def yolo2coco(arg):
     # images dir name
     indexes = os.listdir(originImagesDir)
 
+    start_from=1
+    if arg.start_zero:
+        start_from=0
+
     if arg.random_split or arg.split_by_file:
         # 用于保存所有数据的图片信息和标注信息
         train_dataset = {'categories': [], 'annotations': [], 'images': []}
@@ -71,7 +76,7 @@ def yolo2coco(arg):
         test_dataset = {'categories': [], 'annotations': [], 'images': []}
 
         # 建立类别标签和数字id的对应关系, 类别id从0开始。
-        for i, cls in enumerate(classes, 0):
+        for i, cls in enumerate(classes, start_from):
             train_dataset['categories'].append({'id': i, 'name': cls, 'supercategory': 'mark'})
             val_dataset['categories'].append({'id': i, 'name': cls, 'supercategory': 'mark'})
             test_dataset['categories'].append({'id': i, 'name': cls, 'supercategory': 'mark'})
@@ -132,8 +137,9 @@ def yolo2coco(arg):
                 y1 = (y - h / 2) * H
                 x2 = (x + w / 2) * W
                 y2 = (y + h / 2) * H
-                # 标签序号从0开始计算, coco2017数据集标号混乱，不管它了。
-                cls_id = int(label[0])   
+                # ~~标签序号从0开始计算, coco2017数据集标号混乱，不管它了。~~
+                # modify to start from 1
+                cls_id = int(label[0])+start_from   
                 width = max(0, x2 - x1)
                 height = max(0, y2 - y1)
                 dataset['annotations'].append({

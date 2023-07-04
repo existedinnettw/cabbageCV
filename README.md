@@ -1,4 +1,7 @@
 # cabbageCV
+
+![image-20230705002001195](README.assets/image-20230705002001195.png)
+
 CNN related method to estivate cabbage size
 
 * dataset are put in [cabbage2023](https://drive.google.com/drive/folders/1DDnzfKEph2a8wSruEkUR9-HfcbIX9sq2)
