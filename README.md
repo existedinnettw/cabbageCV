@@ -11,7 +11,7 @@ current reslt is ap50=0.87 for `retinanet_resnetfpn_coco` model
 
 ## TODO
 * Try to apply other models e.g. `centernet`, `yolo`
-
+* split large picture to smaller. (perprocessing.)
 
 
 
