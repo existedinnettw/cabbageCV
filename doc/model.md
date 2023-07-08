@@ -8,6 +8,9 @@ usually, we though yolov6>spinenet>resnet fpn>fasterrcnn
     * ![](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*tOkQQ5g2Tp5xWShaO4VUpQ.jpeg)
 * [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
     * As you can see, larger input image--> higher mAP score.
+* [YOLOv8, EfficientDet, Faster R-CNN or YOLOv5 for remote sensing](https://medium.com/@rustemgal/yolov8-efficientdet-faster-r-cnn-or-yolov5-for-remote-sensing-12487c40ef68)
+    * yoloV8 > YOLOv5 > EfficientDet > Faster R-CNN
+    
 
 however, in this experiment. 
 fasterrcnn(0.95.8)>spinnet(0.94.1)>resnet fpn(0.87)(0.77)

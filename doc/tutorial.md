@@ -21,7 +21,8 @@ we focus on reimplement Object detection with Model Garden
 Actually, tensorflow model official have no datasheet, we have to trace source code on our own.  
 And except few model in serving, most models are not pretrained (init_checkpoint), therefore performance is bad in limited time.  
 Rowan sung use compiled official [yolo](https://github.com/AlexeyAB/darknet) c++ model, which is directly written by cudnn API, to directly train, evaluate.  
-[torchvision-models/](https://pytorch.org/vision/0.8/models.html) official doesn't offer much result at the same time. I think it era of github 3rd weight downloading now.  
+
+[torchvision-models/](https://pytorch.org/vision/0.8/models.html) official doesn't offer much result at the same time. I think it era of github 3rd weight downloading now. Now, yolov7 is published in this [link](https://github.com/WongKinYiu/yolov7) with pretrained weight.   
 
 ### Object detection with Model Garden
 
