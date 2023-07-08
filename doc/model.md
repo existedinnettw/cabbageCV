@@ -9,5 +9,5 @@ usually, we though yolov6>spinenet>resnet fpn>fasterrcnn
 * 
 
 however, in this experiment. 
-fasterrcnn(0.95)>resnet fpn(0.87)>spinnet(0.03)
+fasterrcnn(0.95.8)>spinnet(0.94.1)>resnet fpn(0.87)
 
